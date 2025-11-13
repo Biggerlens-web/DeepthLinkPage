@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+        function tryOpenApp() {
+            const universalLink = "https://config.ios.biggerlens.com/ppt/fallback";
+
+            const fallbackLink = "https://imyppt.com.cn";
+
+            // 如果当前页面已经是 universalLink，直接跳转备用网站（避免重复请求）
+            if (window.location.href === universalLink) {
+                window.location = fallbackLink;
+                return;
+            }
+
+            // 尝试用 iframe 打开 App
+            const iframe = document.createElement('iframe');
+
+
+            iframe.src = universalLink;
+            document.body.appendChild(iframe);
+
+
+            const startTime = Date.now();
+            setTimeout(function () {
+                if (Date.now() - startTime < 1000) {
+                    window.location = fallbackLink;
+                }
+            }, 800);
+        }
+
+        window.onload = tryOpenApp;
+    </script>
+</head>
+
+<body>
+    <p>Redirecting to app or website...</p>
+</body>
+
+</html>
