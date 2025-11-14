@@ -41,6 +41,11 @@ const router = createRouter({
             path: '/knockout/function',
             name: 'knockout',
             component: () => import('../views/knockout.vue')
+        },
+        {
+            path: '/FormMaster/share',
+            name: 'formmasterfunction',
+            component: () => import('../views/formmasterAriDrop.vue')
         }
     ]
 })
