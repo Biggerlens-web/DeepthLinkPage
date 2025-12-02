@@ -28,7 +28,7 @@ const router = createRouter({
             component: () => import('../views/formmaster.vue')
         },
         {
-            path: '/formmaster/shareInApp',
+            path: '/FormMaster/shareInApp',
             name: 'formmastershare',
             component: () => import('../views/formmasterShareInApp.vue')
         },
